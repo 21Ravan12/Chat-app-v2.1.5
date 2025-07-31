@@ -1,0 +1,183 @@
+
+.login-page{
+    width: 100%;
+    height: 100%;
+    display: none;
+    justify-content: center;
+    align-items: center;
+}
+.sign-up-page{
+    width: 100%;
+    height: 100%;
+    display: none;
+    justify-content: center;
+    align-items: center;
+}
+.forget-password-page{
+    width: 100%;
+    height: 100%;
+    display: none;
+    justify-content: center;
+    align-items: center;
+}
+.forget-code-insert-page{
+    width: 100%;
+    height: 100%;
+    display: none;
+    justify-content: center;
+    align-items: center;
+}
+.code-insert-page{
+    width: 100%;
+    height: 100%;
+    display: none;
+    justify-content: center;
+    align-items: center;
+}
+.refresh-password-page{
+    width: 100%;
+    height: 100%;
+    display: none;
+    justify-content: center;
+    align-items: center;
+}
+
+/* Main container with dark theme styling */
+.registration-container {
+    background-color: #1f1f1f; /* Dark container background */
+    padding: 20px;
+    box-shadow: 0px 5px 20px rgba(0, 0, 0, 0.3); /* Stronger shadow */
+    border-radius: 10px;
+    width: 100%;
+    max-width: 400px;
+    box-sizing: border-box;
+}
+
+/* Heading style for the form title */
+.registration-header {
+    text-align: center;
+    margin-bottom: 20px;
+    color: #1E90FF; /* Blue for title */
+    font-size: 2em;
+}
+
+/* Styling for input fields in the registration form */
+.input-field {
+    width: 100%;
+    padding: 12px;
+    margin-top: 10px;
+    margin-bottom: 20px;
+    border: 2px solid #555; /* Dark border */
+    border-radius: 5px;
+    font-size: 1em;
+    transition: border-color 0.3s;
+    background-color: #333; /* Dark input background */
+    color: #e0e0e0; /* Light text inside inputs */
+    box-sizing: border-box;
+}
+
+/* Focus effect on input fields */
+.input-field:focus {
+    border-color: #1E90FF; /* Blue focus border */
+    outline: none;
+}
+
+/* Styling for submit button */
+.submit-button {
+    width: 100%;
+    padding: 12px;
+    background-color: #1E90FF; /* Blue button background */
+    color: white;
+    border: none;
+    border-radius: 5px;
+    font-size: 1.1em;
+    cursor: pointer;
+    transition: background-color 0.3s;
+}
+
+/* Hover effect for the button */
+.submit-button:hover {
+    background-color: #4682B4; /* Darker blue on hover */
+}
+
+/* Styling for the link below the form */
+.form-link {
+    display: block;
+    text-align: center;
+    margin-top: 15px;
+    text-decoration: none;
+    color: #888; /* Light grey for links */
+    font-size: 0.9em;
+}
+
+/* Hover effect for the link */
+.form-link:hover {
+    color: #1E90FF; /* Blue color on hover */
+}
+
+/* Container for the registration form fields */
+.registration-form {
+    display: flex;
+    flex-direction: column;
+}
+
+/* Success message for registration */
+.success-message {
+    color: #32CD32; /* Green success text */
+    display: none;
+}
+
+/* Hidden secret section */
+.secret-section {
+    display: none;
+}
+
+/* Error message for invalid form submission */
+.error-message {
+    color: #FF4500; /* Orange-red for error text */
+    display: none;
+}
+/* Base styles (already included in your code) */
+
+/* Mobile-responsive adjustments */
+@media (max-width: 768px) {
+    .registration-container {
+        width: 85%; /* Full width with some padding on small screens */
+    }
+
+}
+
+@media (max-width: 480px) {
+    .registration-container {
+        width: 70%; /* Full width with some padding on small screens */
+    }
+
+}
+
+/* Flexbox centering for forms */
+.login-page,
+.sign-up-page,
+.forget-password-page,
+.forget-code-insert-page,
+.code-insert-page,
+.refresh-password-page {
+    display: none;
+    justify-content: center;
+    align-items: center;
+    width: 100%;
+    height: 100%;
+    display: none; /* Hidden by default */
+}
+
+/* Adjust styles for error messages */
+.error-message {
+    color: #FF4500;
+    display: block; /* Show error message */
+}
+
+/* Success message */
+.success-message {
+    color: #32CD32;
+    display: block; /* Show success message */
+}
+

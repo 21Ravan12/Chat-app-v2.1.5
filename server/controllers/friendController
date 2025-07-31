@@ -1,0 +1,84 @@
+// Importing required modules
+const { MongoClient } = require('mongodb');
+const { mongoUri, dbName } = require('../config/config');
+
+// Creating a new MongoClient instance
+const client = new MongoClient(mongoUri);
+let db;
+
+// Connecting to MongoDB
+client.connect()
+  .then(() => {
+    // Assigning the connected database to db
+    db = client.db(dbName);
+    console.log("Connected to MongoDB");
+  })
+  .catch(err => console.error("MongoDB connection failed:", err));
+
+// Function to add a friend to the user's friend list
+const addFriend = async (req, res) => {
+  try {
+    const { friendEmail, email } = req.body;
+
+    // Finding the user and the friend in the database
+    const user = await db.collection('users').findOne({ email });
+    const mate = await db.collection('users').findOne({ email: friendEmail });
+
+    if (!user || !mate) {
+      return res.status(404).json({ message: "User or friend not found." });
+    }
+
+    if (!user.friends) {
+      user.friends = [];
+    }
+
+    // Checking if the friend is already in the user's friend list
+    if (user.friends.some(f => f.email === friendEmail)) {
+      return res.status(400).json({ message: "This friend is already in the list." });
+    }
+
+    // Adding the friend to the user's friend list
+    const result = await db.collection('users').updateOne(
+      { email: email },
+      { $addToSet: { friends: { name: mate.name, email: friendEmail, profileImage: mate.profileImage || '' } } }
+    );
+
+    if (result.modifiedCount > 0) {
+      res.status(200).json({ message: "Friend added successfully!" });
+    } else {
+      res.status(500).json({ message: "Failed to add the friend." });
+    }
+  } catch (err) {
+    console.error("Error adding friend:", err);
+    res.status(500).json({ message: `Error: ${err.message}` });
+  }
+};
+
+// Function to get the user's friend list
+const getFriends = async (req, res) => {
+  try {
+    // Using req.query instead of req.body for GET request
+    const { email } = req.query;
+
+    if (!email) {
+      return res.status(400).json({ message: "Email is required." });
+    }
+
+    // Finding the user in the database
+    const user = await db.collection('users').findOne({ email });
+
+    if (!user) {
+      return res.status(404).json({ message: "User not found." });
+    }
+
+    // Returning the user's friend list
+    res.status(200).json({ friends: user.friends || [] });
+
+  } catch (err) {
+    console.error("Error fetching friends:", err);
+    res.status(500).json({ message: `Error: ${err.message}` });
+  }
+};
+
+// Exporting the controller functions
+module.exports = { addFriend, getFriends };
