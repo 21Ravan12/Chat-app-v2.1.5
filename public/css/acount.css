@@ -1,14 +1,12 @@
-/* Reset default margins, paddings, and enable box-sizing for all elements */
 * {
     margin: 0;
     padding: 0;
     box-sizing: border-box;
 }
 
-/* General body styling */
 body {
     font-family: 'Arial', sans-serif;
-    background-color: #121212;
+    background-color: #181818;
     color: #e0e0e0;
     display: flex;
     justify-content: center;
@@ -16,7 +14,6 @@ body {
     min-height: 100dvh;
 }
 
-/* Container for the account section, hidden by default */
 .account-container {
     width: 100%;
     height: 98dvh;
@@ -25,34 +22,29 @@ body {
     align-items: center;
     position: relative;
 }
-
-/* Back button styling */
 .back-button {
     position: absolute;
     left: 6px;
     top: 6px;
-    background-color: #1E90FF;
-    color: white;
-    border: none;
-    padding: 10px 20px;
-    font-size: 16px;
-    border-radius: 5px;
-    cursor: pointer;
-    transition: background-color 0.3s ease;
+    background-color: #1E90FF; 
+    color: white; 
+    border: none; 
+    padding: 10px 20px; 
+    font-size: 16px; 
+    border-radius: 5px; 
+    cursor: pointer; 
+    transition: background-color 0.3s ease; 
 }
 
 .back-button:hover {
-    background-color: #4682B4;
+    background-color: #4682B4; /* Darker green on hover */
 }
 
-/* Wrapper for the profile card */
 .profile-wrapper {
-    max-width: 500px;
     width: 100%;
-    padding: 30px;
+    padding: 0px;
 }
 
-/* Profile card styling */
 .profile-card {
     background: #1f1f1f;
     border-radius: 15px;
@@ -62,7 +54,10 @@ body {
     padding: 30px;
 }
 
-/* Profile image styling */
+.profile-header {
+    margin-bottom: 30px;
+}
+
 .profile-image {
     width: 180px;
     height: 180px;
@@ -71,7 +66,6 @@ body {
     border: 5px solid #1E90FF;
 }
 
-/* Profile name and email text */
 .profile-name {
     font-size: 2.2rem;
     color: #ffffff;
@@ -83,30 +77,26 @@ body {
     color: #aaa;
 }
 
-/* Profile details section */
 .profile-details {
     margin-top: 30px;
-    text-align: left;
+    text-align: center;
 }
 
 .profile-detail {
     margin-bottom: 20px;
 }
 
-/* Detail headings inside the profile */
 .profile-detail h3 {
     font-size: 1.3rem;
     color: #1E90FF;
     margin-bottom: 10px;
 }
 
-/* Detail text inside the profile */
 .profile-detail p {
     font-size: 1.1rem;
     color: #e0e0e0;
 }
 
-/* Edit button for profile */
 .profile-edit-button {
     background-color: #1E90FF;
     color: white;
@@ -123,7 +113,6 @@ body {
     background-color: #4682B4;
 }
 
-/* Modal for editing profile */
 .profile-modal {
     display: none;
     position: fixed;
@@ -136,7 +125,6 @@ body {
     align-items: center;
 }
 
-/* Modal content box */
 .modal-content {
     background: #1f1f1f;
     border-radius: 12px;
@@ -153,7 +141,6 @@ body {
     font-size: 1.8rem;
 }
 
-/* Input fields inside modal */
 .modal-content label {
     display: block;
     margin-bottom: 10px;
@@ -174,7 +161,6 @@ body {
     color: #e0e0e0;
 }
 
-/* Modal action buttons */
 .modal-buttons {
     display: flex;
     justify-content: space-between;
@@ -208,9 +194,9 @@ body {
     background-color: #555;
 }
 
-/* Image preview inside modal */
 .image-preview {
     max-width: 150px;
     margin-top: 10px;
     border-radius: 8px;
 }
+
