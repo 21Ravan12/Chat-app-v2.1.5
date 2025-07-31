@@ -1,4 +1,3 @@
-/* General Styles */
 * {
     margin: 0;
     padding: 0;
@@ -12,16 +11,14 @@ body {
     color: white;
 }
 
-/* Main Page */
 .main-page {
     display: none;
     flex-direction: column;
     align-items: center;
-    gap: 40px;
+    gap: 8px;
     width: 100%;
 }
 
-/* Navbar */
 .main-navbar {
     width: 100%;
     display: flex;
@@ -37,15 +34,13 @@ body {
     transition: all 0.3s ease-in-out;
 }
 
-/* Navbar Scroll Effect */
 .main-navbar.scrolled {
     background: rgba(20, 20, 20, 0.95);
     padding: 10px 5%;
 }
 
-/* Logo */
 .platform-logo h1 {
-    font-size: 2.2em;
+    font-size: 2.7em;
     font-weight: bold;
     color: #00bcd4;
     transition: color 0.3s ease-in-out;
@@ -55,14 +50,13 @@ body {
     color: #00eaff;
 }
 
-/* Navigation Links */
 .navigation-links {
     display: flex;
     gap: 25px;
 }
 
 .navigation-links a {
-    font-size: 1.1em;
+    font-size: 1.6em;
     color: #ddd;
     text-decoration: none;
     transition: all 0.3s ease;
@@ -75,7 +69,6 @@ body {
     background: rgba(0, 188, 212, 0.2);
 }
 
-/* Login Button */
 .login-button {
     background: linear-gradient(135deg, #00bcd4, #008c9e);
     padding: 12px 25px;
@@ -92,7 +85,6 @@ body {
     transform: scale(1.05);
 }
 
-/* Mobile Menu */
 .menu-toggle {
     display: none;
     flex-direction: column;
@@ -107,7 +99,6 @@ body {
     transition: all 0.3s ease-in-out;
 }
 
-/* Mobile Menu Open */
 .navigation-links.open {
     display: flex;
     flex-direction: column;
@@ -122,15 +113,14 @@ body {
     animation: fadeIn 0.3s ease-in-out;
 }
 
-/* Hero Banner */
 .hero-banner {
-    width: 90%;
-    max-width: 1200px;
+    width: 98%;
     display: flex;
     flex-wrap: wrap;
     justify-content: space-between;
+    align-self: center;
     align-items: center;
-    text-align: left;
+    text-align: center;
     padding: 100px 5%;
     margin-top: 80px;
     background: radial-gradient(circle, #212121, #1b1b1b);
@@ -138,7 +128,7 @@ body {
 }
 
 .hero-content {
-    max-width: 600px;
+    width: 100%;
 }
 
 .hero-content h2 {
@@ -175,13 +165,11 @@ body {
     box-shadow: 0 10px 25px rgba(0, 0, 0, 0.4);
 }
 
-/* About Section */
 .about-platform {
-    width: 90%;
-    max-width: 800px;
+    width: 98%;
     text-align: center;
     padding: 60px 20px;
-    background: #282828;
+    background: radial-gradient(circle, #212121, #1b1b1b);
     border-radius: 10px;
 }
 
@@ -195,13 +183,11 @@ body {
     color: #ccc;
 }
 
-/* Features Section */
 .platform-features {
-    width: 90%;
-    max-width: 1100px;
+    width: 98%;
     text-align: center;
     padding: 80px 20px;
-    background: #333;
+    background: radial-gradient(circle, #212121, #1b1b1b);
     border-radius: 10px;
 }
 
@@ -216,7 +202,7 @@ body {
 .feature-item {
     width: 100%;
     max-width: 320px;
-    background: #444;
+    background: radial-gradient(circle, #212121, #1b1b1b);
     padding: 25px;
     border-radius: 10px;
     box-shadow: 0 4px 10px rgba(0, 0, 0, 0.3);
@@ -239,13 +225,11 @@ body {
     color: #ccc;
 }
 
-/* Sign Up Call to Action */
 .signup-call-to-action {
-    width: 90%;
-    max-width: 700px;
+    width: 98%;
     text-align: center;
     padding: 50px 20px;
-    background: #2c2c2c;
+    background: radial-gradient(circle, #212121, #1b1b1b);
     border-radius: 10px;
 }
 
@@ -260,7 +244,6 @@ body {
     margin-bottom: 20px;
 }
 
-/* Footer */
 .main-footer {
     width: 100%;
     text-align: center;
@@ -268,24 +251,17 @@ body {
     background: #111;
     color: white;
     border-radius: 10px;
-    margin-top: 40px;
+    margin-top: 0px;
 }
 
-/* Mobile Responsiveness */
 @media screen and (max-width: 1024px) {
     .navigation-links {
         display: none;
     }
 
-    .hero-banner {
-        flex-direction: column;
-        text-align: center;
-        padding: 80px 20px;
-    }
 
-    .hero-content {
-        max-width: 100%;
-    }
+
+
 
     .hero-image-container img {
         max-width: 300px;
@@ -302,22 +278,7 @@ body {
 }
 
 @media screen and (max-width: 768px) {
-    .platform-logo h1 {
-        font-size: 1.5em;
-    }
 
-    .hero-content h2 {
-        font-size: 2.2em;
-    }
-
-    .hero-content p {
-        font-size: 1em;
-    }
-
-    .primary-cta-button {
-        font-size: 1em;
-        padding: 10px 20px;
-    }
 
     .about-platform p,
     .feature-item p,
@@ -325,3 +286,4 @@ body {
         font-size: 1em;
     }
 }
+
